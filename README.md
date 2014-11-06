@@ -19,4 +19,19 @@ se debe dar todo los permisos al directorio app/tmp
 
 chmod -R 777 app/tmp
 
+paso 3 
+======================
+
+ojo se tiene que crear la base de datos previamente en mysql 
+
+configurar la base de datos por defecto esta configurada con 
+
+nombre base de datos : web_avanzada
+
+usuario : root 
+
+pass : 
+
+si dean modificar estos balores lo pueden hacer localmente editando el archivo 
  
+app/Config/database.php
