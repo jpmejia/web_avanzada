@@ -10,5 +10,13 @@ luego se procede a clonar el proyecto :
 
 git clone https://github.com/jpmejia/web_avanzada.git 
 
+ingresar a http://localhost/web_avanzada
+
 paso 2
 =======================
+
+se debe dar todo los permisos al directorio app/tmp
+
+chmod -R 777 app/tmp
+
+ 
