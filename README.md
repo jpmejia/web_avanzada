@@ -32,6 +32,6 @@ usuario : root
 
 pass : 
 
-si dean modificar estos balores lo pueden hacer localmente editando el archivo 
+si desean modificar estos valores lo pueden hacer localmente editando el archivo 
  
 app/Config/database.php
