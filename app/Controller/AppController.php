@@ -50,11 +50,12 @@ class AppController extends Controller {
                     'passwordHasher' => 'Blowfish'
                 )
             )
-        )
+        ),
+        'RequestHandler'
     );
 
     public function beforeFilter() {
-        $this->Auth->allow('index', 'view');
+        $this->Auth->allow('index', 'view', 'view_pdf');
     }
 
     public function isAuthorized($user) {

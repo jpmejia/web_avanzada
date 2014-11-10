@@ -26,6 +26,7 @@
  */
 //	Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
 	Router::connect('/', array('controller' => 'posts', 'action' => 'index', 'home'));
+        Router::parseExtensions('pdf');
 /**
  * ...and connect the rest of 'Pages' controller's URLs.
  */

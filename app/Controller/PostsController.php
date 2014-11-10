@@ -1,9 +1,10 @@
-<?php
+<?php 
 
 class PostsController extends AppController {
 
     public $helpers = array('Html', 'Form');
-
+    public $components = array('RequestHandler');
+    
     public function isAuthorized($user) {
         // All registered users can add posts
         if ($this->action === 'add') {
@@ -24,15 +25,11 @@ class PostsController extends AppController {
     }
 
     public function view($id = null) {
-        if (!$id) {
-            throw new NotFoundException(__('Invalid post'));
+        $this->Post->id = $id;
+        if (!$this->Post->exists()) {
+            throw new NotFoundException(__('Invalid invoice'));
         }
-
-        $post = $this->Post->findById($id);
-        if (!$post) {
-            throw new NotFoundException(__('Invalid post'));
-        }
-        $this->set('post', $post);
+        $this->set('post', $this->Post->read(null, $id));
     }
 
     public function add() {
@@ -81,6 +78,12 @@ class PostsController extends AppController {
             );
             return $this->redirect(array('action' => 'index'));
         }
+    }
+
+    public function view_pdf($id = null) {
+        $this->layout = 'pdf'; //this will use the pdf.ctp layout 
+        $this->render();
+
     }
 
 }
